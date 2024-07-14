@@ -36,18 +36,18 @@ const RequestList = () => {
     const { approvals, status } = request;
   
     if (status === 'approved') {
-      return `Approval confirmed by ${approvals[approvals.length - 1].sanitized_user.first_name}`;
+      return `Approval confirmed by ${approvals[approvals.length - 1].user.first_name}`;
     }
   
     if (status === 'rejected') {
-      return `Request rejected by ${approvals[approvals.length - 1].sanitized_user.first_name}`;
+      return `Request rejected by ${approvals[approvals.length - 1].user.first_name}`;
     }
   
     if (status === 'approval_initiated') {
       if (approvals.length === 3) {
-        return `Already approved by ${approvals[1].sanitized_user.first_name} and ${approvals[0].sanitized_user.first_name}`;
+        return `Already approved by ${approvals[1].user.first_name} and ${approvals[0].user.first_name}`;
       } else {
-        return `Approval initiated by ${approvals[0].sanitized_user.first_name}`;
+        return `Approval initiated by ${approvals[0].user.first_name}`;
       }
     }
   
@@ -137,8 +137,5 @@ const RequestList = () => {
     </div>
   );
 };
-{/* <div className="w-full bg-gray-200 rounded-full h-2.5">
-  <div className="bg-blue-600 h-2.5 rounded-full" style={{ width: getProgressWidth(request.status) }}></div>
-</div> */}
 
 export default RequestList;

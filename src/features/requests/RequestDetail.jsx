@@ -24,7 +24,7 @@ const RequestDetail = () => {
     if (status === 'approved') {
       return(
         <div className="flex flex-col-reverse">
-          <dt className="text-sm font-medium text-gray-600">{approvals[approvals.length - 1].sanitized_user.first_name}</dt>
+          <dt className="text-sm font-medium text-gray-600">{approvals[approvals.length - 1].user.first_name}</dt>
           <dd className="text-xs text-gray-500">Approval confirmed by </dd>
         </div>
       )
@@ -32,7 +32,7 @@ const RequestDetail = () => {
     if (status === 'rejected') {
       return(
         <div className="flex flex-col-reverse">
-          <dt className="text-sm font-medium text-gray-600">{approvals[approvals.length - 1].sanitized_user.first_name}</dt>
+          <dt className="text-sm font-medium text-gray-600">{approvals[approvals.length - 1].user.first_name}</dt>
           <dd className="text-xs text-gray-500">Request rejected by </dd>
         </div>
       )
@@ -41,14 +41,14 @@ const RequestDetail = () => {
       if (approvals.length === 3) {
         return(
           <div className="flex flex-col-reverse">
-            <dt className="text-sm font-medium text-gray-600">{approvals[1].sanitized_user.first_name} and {approvals[0].sanitized_user.first_name}</dt>
+            <dt className="text-sm font-medium text-gray-600">{approvals[1].user.first_name} and {approvals[0].user.first_name}</dt>
             <dd className="text-xs text-gray-500">Already approved by </dd>
           </div>
         )
       } else {
         return(
           <div className="flex flex-col-reverse">
-            <dt className="text-sm font-medium text-gray-600">{approvals[0].sanitized_user.first_name}</dt>
+            <dt className="text-sm font-medium text-gray-600">{approvals[0].user.first_name}</dt>
             <dd className="text-xs text-gray-500">Approval initiated by </dd>
           </div>
         )
