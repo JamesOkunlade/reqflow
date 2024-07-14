@@ -5,7 +5,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { signup, login } from './authSlice';
 
 const AuthForm = ({ type }) => {
-  const [formData, setFormData] = useState({ email: '', password: '', firstname: '', lastname: '' });
+  const [formData, setFormData] = useState({ email: '', password: '', password_confirmation: '', first_name: '', last_name: '' });
   const dispatch = useDispatch();
   const authState = useSelector((state) => state.auth);
   const navigate = useNavigate();
@@ -79,8 +79,8 @@ const AuthForm = ({ type }) => {
                     <input
                       type="text"
                       id="FirstName"
-                      name="firstname"
-                      value={formData.firstname}
+                      name="first_name"
+                      value={formData.first_name}
                       onChange={handleChange}
                       required
                       className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm px-4 py-2"
@@ -93,8 +93,8 @@ const AuthForm = ({ type }) => {
                     <input
                       type="text"
                       id="LastName"
-                      name="lastname"
-                      value={formData.lastname}
+                      name="last_name"
+                      value={formData.last_name}
                       onChange={handleChange}
                       required
                       className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm px-4 py-2"
@@ -126,6 +126,23 @@ const AuthForm = ({ type }) => {
                   className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm px-4 py-2"
                 />
               </div>
+
+              {type === 'signup' && (
+                <>
+                  <div className="col-span-6">
+                    <label htmlFor="Password" className="block text-sm font-medium text-gray-700">Confirm password</label>
+                    <input
+                      type="password"
+                      id="PasswordConfirmation"
+                      name="password_confirmation"
+                      value={formData.password_confirmation}
+                      onChange={handleChange}
+                      required
+                      className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm px-4 py-2"
+                    />
+                  </div>
+                </>
+              )}
              
               <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
                 <button
