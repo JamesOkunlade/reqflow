@@ -61,7 +61,7 @@ const Approvals = () => {
                 {approval.approved_amount_cents}
               </td>
               <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                {`${approval.request.sanitized_user.first_name} ${approval.request.sanitized_user.last_name}`}
+                {`${approval.request.user.first_name} ${approval.request.user.last_name}`}
               </td>
               <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                 <span className={`rounded ${statusColor(approval.request.status)} font-medium px-2 py-1 text-xs`}>

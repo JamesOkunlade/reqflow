@@ -1,78 +1,3 @@
-// import React, { useState, useEffect } from 'react';
-// import PropTypes from 'prop-types';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { useNavigate, Link } from 'react-router-dom';
-// import { signup, login } from './authSlice';
-
-// const AuthForm = ({ type }) => {
-//   const [formData, setFormData] = useState({ email: '', password: '', firstname: '', lastname: '' });
-//   const dispatch = useDispatch();
-//   const authState = useSelector((state) => state.auth);
-//   const navigate = useNavigate();
-
-
-//   const handleChange = (e) => {
-//     setFormData({
-//       ...formData,
-//       [e.target.name]: e.target.value,
-//     });
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     if (type === 'signup') {
-//       dispatch(signup(formData));
-//     } else {
-//       dispatch(login(formData));
-//     }
-//   };
-
-//   useEffect(() => {
-//     if (authState.isAuthenticated) {
-//       navigate('/');
-//     }
-//   }, [authState.isAuthenticated, navigate]);
-
-//   return (
-//     <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md w-full max-w-md">
-//       {type === 'signup' && (
-//         <>
-//           <div className="mb-4">
-//             <label className="block text-gray-700">First Name:</label>
-//             <input type="text" name="firstname" value={formData.firstname} onChange={handleChange} required className="w-full px-4 py-2 border rounded" />
-//           </div>
-//           <div className="mb-4">
-//             <label className="block text-gray-700">Last Name:</label>
-//             <input type="text" name="lastname" value={formData.lastname} onChange={handleChange} required className="w-full px-4 py-2 border rounded" />
-//           </div>
-//         </>
-//       )}
-//       <div className="mb-4">
-//         <label className="block text-gray-700">Email:</label>
-//         <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full px-4 py-2 border rounded" />
-//       </div>
-//       <div className="mb-4">
-//         <label className="block text-gray-700">Password:</label>
-//         <input type="password" name="password" value={formData.password} onChange={handleChange} required className="w-full px-4 py-2 border rounded" />
-//       </div>
-//       <button type="submit" className="w-full bg-blue-500 text-white px-4 py-2 rounded mt-4">{type === 'signup' ? 'Sign Up' : 'Log In'}</button>
-//       {authState.error && <p className="text-red-500 mt-2">{authState.error}</p>}
-//       {type === 'signup' ? (
-//         <p className="mt-4">Already have an account? <Link to="/login" className="text-blue-500">Log In</Link></p>
-//       ) : (
-//         <p className="mt-4">Don't have an account? <Link to="/signup" className="text-blue-500">Sign Up</Link></p>
-//       )}
-//     </form>
-//   );
-// };
-
-// AuthForm.propTypes = {
-//   type: PropTypes.oneOf(['signup', 'login']).isRequired,
-// };
-
-// export default AuthForm;
-
-
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
@@ -80,7 +5,11 @@ import { useNavigate, Link } from 'react-router-dom';
 import { signup, login } from './authSlice';
 
 const AuthForm = ({ type }) => {
-  const [formData, setFormData] = useState({ email: '', password: '', firstname: '', lastname: '' });
+  const initialFormData = type === 'signup'
+    ? { email: '', password: '', password_confirmation: '', first_name: '', last_name: '' }
+    : { email: '', password: '' };
+
+  const [formData, setFormData] = useState(initialFormData);
   const dispatch = useDispatch();
   const authState = useSelector((state) => state.auth);
   const navigate = useNavigate();
@@ -136,12 +65,16 @@ const AuthForm = ({ type }) => {
             </Link>
 
             <h1 className="mt-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
-              Welcome to ReqFlow 🦑
+              Welcome to ReqFlow
             </h1>
 
             <p className="mt-4 leading-relaxed text-gray-500">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam dolorum aliquam,
-              quibusdam aperiam voluptatum.
+              A simple request and approval tool.
+            </p>
+
+            <p className="mt-4 leading-relaxed text-gray-500">
+              The idea is simple, a user can make a request of an amount for anything and when three other users with a higher clearance 
+              level than the requester approve, the requested amount is released in form of a preloaded virtual card (this part has not been implemented yet). 
             </p>
 
             <form onSubmit={handleSubmit} className="mt-8 grid grid-cols-6 gap-6">
@@ -154,8 +87,8 @@ const AuthForm = ({ type }) => {
                     <input
                       type="text"
                       id="FirstName"
-                      name="firstname"
-                      value={formData.firstname}
+                      name="first_name"
+                      value={formData.first_name}
                       onChange={handleChange}
                       required
                       className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm px-4 py-2"
@@ -168,8 +101,8 @@ const AuthForm = ({ type }) => {
                     <input
                       type="text"
                       id="LastName"
-                      name="lastname"
-                      value={formData.lastname}
+                      name="last_name"
+                      value={formData.last_name}
                       onChange={handleChange}
                       required
                       className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm px-4 py-2"
@@ -201,6 +134,23 @@ const AuthForm = ({ type }) => {
                   className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm px-4 py-2"
                 />
               </div>
+
+              {type === 'signup' && (
+                <>
+                  <div className="col-span-6">
+                    <label htmlFor="Password" className="block text-sm font-medium text-gray-700">Confirm password</label>
+                    <input
+                      type="password"
+                      id="PasswordConfirmation"
+                      name="password_confirmation"
+                      value={formData.password_confirmation}
+                      onChange={handleChange}
+                      required
+                      className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm px-4 py-2"
+                    />
+                  </div>
+                </>
+              )}
              
               <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
                 <button
