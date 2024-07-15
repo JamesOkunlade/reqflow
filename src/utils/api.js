@@ -31,7 +31,7 @@ const api = {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify({ authentication: data }),
   }).then(handleResponse),
 
   fetchRequests: (authToken) => fetch(`${API_URL}/requests`, {
