@@ -2,244 +2,110 @@ import React from 'react';
 
 const Home = () => {
   return (
-    // <div className="relative flex min-h-screen flex-col justify-center items-center overflow-hidden bg-gray-50 py-6 sm:py-12">
-    //   <div className="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
-    //     <div className="mx-auto max-w-md">
-    //       <img src="/img/logo.svg" className="h-6" alt="Tailwind Play" />
-    //       <div className="divide-y divide-gray-300/50">
-    //         <div className="space-y-6 py-8 text-base leading-7 text-gray-600">
-    //           <p>An advanced online playground for Tailwind CSS, including support for things like:</p>
-    //           <ul className="space-y-4">
-    //             <li className="flex items-center">
-    //               <svg className="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" strokeLinecap="round" strokeLinejoin="round">
-    //                 <circle cx="12" cy="12" r="11" />
-    //                 <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-    //               </svg>
-    //               <p className="ml-4">
-    //                 Customizing your
-    //                 <code className="text-sm font-bold text-gray-900">tailwind.config.js</code> file
-    //               </p>
-    //             </li>
-    //           </ul>
-    //           <p>Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share online.</p>
-    //         </div>
-    //         <div className="pt-8 text-base font-semibold leading-7">
-    //           <p className="text-gray-900">Want to dig deeper into Tailwind?</p>
-    //           <p>
-    //             <a href="https://tailwindcss.com/docs" className="text-sky-500 hover:text-sky-600">Read the docs &rarr;</a>
-    //           </p>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
-    <section className="">
-      <div className="max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
-        <div className="max-w-xl">
-          <h2 className="text-3xl font-bold sm:text-4xl">What makes us special</h2>
-
-          <p className="mt-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dolores iure fugit totam
-            iste obcaecati. Consequatur ipsa quod ipsum sequi culpa delectus, cumque id tenetur
-            quibusdam, quos fuga minima.
+    <div className="relative flex min-h-screen flex-col justify-center items-center overflow-hidden bg-gray-50 py-6 sm:py-12">
+      <div className="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
+        <div className="mx-auto max-w-md">
+          <h2 className="text-3xl font-bold sm:text-4xl">ReqFlow: A Simple Request and Approval Tool</h2>
+          <p className="mt-4 text-gray-600">
+            The idea is simple, a user can make a request of an amount for anything and when three other users with a higher clearance level than the requester approve, the requested amount is released in form of a preloaded virtual card (this part has not been implemented yet). The focus of this project is not on the validity of the idea but on the technical tools and choices and also an attempt to describe the barest minimum in terms of proactiveness, requirements definition, ownership, autonomy, and good soft communication skills which are all necessary for the role of a product-minded senior engineer.
           </p>
-        </div>
+          
+          <section className="mt-8">
+            <h3 className="text-2xl font-semibold">Features</h3>
+            <ul className="list-disc list-inside mt-4 text-gray-600">
+              <li>User Management: Users can log in, view profiles, and manage requests.</li>
+              <li>Request Management: Users can create, update, delete, and view requests with various states.</li>
+              <li>Approval Management: Higher clearance users can approve or reject requests.</li>
+            </ul>
+          </section>
 
-        <div className="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
-          <div className="flex items-start gap-4">
-            <span className="shrink-0 rounded-lg bg-gray-800 p-4">
-              <svg
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                <path
-                  d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                ></path>
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                ></path>
-              </svg>
-            </span>
+          <section className="mt-8">
+            <h3 className="text-2xl font-semibold">User Stories and Requirements</h3>
+            <ul className="list-disc list-inside mt-4 text-gray-600">
+              <li>A User, who could be an employee of the company, can log on to the system.</li>
+              <li>A User can view all Requests made by other users publicly, including descriptions of the requested amounts and their current status.</li>
+              <li>Status states include: requested, approval_initiated, approved, and rejected. Users can see who initiated, approved, or rejected a Request.</li>
+              <li>A User can create a new Request with a title, description, and amount.</li>
+              <li>A User can update their own Request that is still in the requested state.</li>
+              <li>A User cannot update a Request in approval_initiated, approved, or rejected states.</li>
+              <li>A User can delete their own Request that is still in the requested state.</li>
+              <li>A User cannot delete a Request in approval_initiated, approved, or rejected states.</li>
+              <li>A User can view a list of all Approvals, including approved and rejected ones.</li>
+              <li>A User can view their own profile.</li>
+              <li>Users with higher clearance levels than the requester can approve or reject a Request once.</li>
+              <li>An approval user (one who has approved or rejected) for a Request must be unique.</li>
+            </ul>
+          </section>
 
-            <div>
-              <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
+          <section className="mt-8">
+            <h3 className="text-2xl font-semibold">Request States and Transitions</h3>
+            <p className="mt-4 text-gray-600">
+              A Request starts in the state :requested upon creation. It requires three approvals to transition from :requested to :approval_initiated and finally to :approved. A Request with one or two approvals remains in :approval_initiated state, indicating pending approvals. Once approved by three users, a Request transitions to :approved state. If rejected by any approval user, the Request enters a final state; no further actions or approvals are possible.
+            </p>
+          </section>
 
-              <p className="mt-1 text-sm ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error cumque tempore est ab
-                possimus quisquam reiciendis tempora animi! Quaerat, saepe?
-              </p>
-            </div>
-          </div>
+          <section className="mt-8">
+            <h3 className="text-2xl font-semibold">API Endpoints</h3>
+            <ul className="list-disc list-inside mt-4 text-gray-600">
+              <li>Requests
+                <ul className="list-disc list-inside mt-2 ml-4">
+                  <li>GET /requests - Fetch list of requests</li>
+                  <li>POST /requests - Create a new request</li>
+                  <li>GET /requests/:id - Fetch a single request</li>
+                  <li>PUT /requests/:id - Update a request</li>
+                  <li>DELETE /requests/:id - Delete a request</li>
+                </ul>
+              </li>
+              <li>Approvals
+                <ul className="list-disc list-inside mt-2 ml-4">
+                  <li>GET /approvals - Fetch list of approvals</li>
+                  <li>POST /approvals/:id/approve - Approve a pending approval</li>
+                  <li>POST /approvals/:id/reject - Reject a pending approval</li>
+                </ul>
+              </li>
+              <li>Authentication
+                <ul className="list-disc list-inside mt-2 ml-4">
+                  <li>POST /auth/login - Login a user</li>
+                  <li>POST /signup - Create a new user</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
 
-          <div className="flex items-start gap-4">
-            <span className="shrink-0 rounded-lg bg-gray-800 p-4">
-              <svg
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                <path
-                  d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                ></path>
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                ></path>
-              </svg>
-            </span>
+          <section className="mt-8">
+            <h3 className="text-2xl font-semibold">Technological Choices</h3>
+            <h4 className="text-xl font-semibold mt-4">Authentication and Authorization</h4>
+            <p className="mt-2 text-gray-600">
+              Token-based Authentication: Implemented using the jwt gem for managing JSON Web Tokens (JWT). The User model handles user storage, and the authentication system is structured with four service classes:
+              <ul className="list-disc list-inside mt-2 ml-4">
+                <li>JsonWebToken: Handles encoding and decoding JWT tokens.</li>
+                <li>AuthorizeApiRequest: Ensures API calls are authorized with valid tokens and user payloads.</li>
+                <li>AuthenticationController: Manages the authentication process.</li>
+                <li>AuthenticateUser: Performs user authentication.</li>
+              </ul>
+            </p>
+            
+            <h4 className="text-xl font-semibold mt-4">JWT Singleton</h4>
+            <p className="mt-2 text-gray-600">
+              Provides methods for token encoding and decoding. Encoding uses Rails' unique secret key for signing tokens. Decoding handles token validation and expiration, with JWT raising exceptions handled by an ExceptionHandler module.
+            </p>
 
-            <div>
-              <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
+            <h4 className="text-xl font-semibold mt-4">Message Handling</h4>
+            <p className="mt-2 text-gray-600">
+              Non-domain specific messages are stored in a singleton `Message` class, co-located with `JsonWebToken.rb` and `ApiVersion.rb` files in `app/lib`.
+            </p>
 
-              <p className="mt-1 text-sm ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error cumque tempore est ab
-                possimus quisquam reiciendis tempora animi! Quaerat, saepe?
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-4">
-            <span className="shrink-0 rounded-lg bg-gray-800 p-4">
-              <svg
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                <path
-                  d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                ></path>
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                ></path>
-              </svg>
-            </span>
-
-            <div>
-              <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
-
-              <p className="mt-1 text-sm ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error cumque tempore est ab
-                possimus quisquam reiciendis tempora animi! Quaerat, saepe?
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-4">
-            <span className="shrink-0 rounded-lg bg-gray-800 p-4">
-              <svg
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                <path
-                  d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                ></path>
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                ></path>
-              </svg>
-            </span>
-
-            <div>
-              <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
-
-              <p className="mt-1 text-sm ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error cumque tempore est ab
-                possimus quisquam reiciendis tempora animi! Quaerat, saepe?
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-4">
-            <span className="shrink-0 rounded-lg bg-gray-800 p-4">
-              <svg
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                <path
-                  d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                ></path>
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                ></path>
-              </svg>
-            </span>
-
-            <div>
-              <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
-
-              <p className="mt-1 text-sm ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error cumque tempore est ab
-                possimus quisquam reiciendis tempora animi! Quaerat, saepe?
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-4">
-            <span className="shrink-0 rounded-lg bg-gray-800 p-4">
-              <svg
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                <path
-                  d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                ></path>
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                ></path>
-              </svg>
-            </span>
-
-            <div>
-              <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
-
-              <p className="mt-1 text-sm ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error cumque tempore est ab
-                possimus quisquam reiciendis tempora animi! Quaerat, saepe?
-              </p>
-            </div>
-          </div>
+            <h4 className="text-xl font-semibold mt-4">Versioning</h4>
+            <p className="mt-2 text-gray-600">
+              API Versioning: Even for internal projects, versioning APIs is crucial to manage breaking changes. Implemented by adding a route constraint based on request headers and organizing controllers into different modules.
+              <ul className="list-disc list-inside mt-2 ml-4">
+                <li>ApiVersion Class: Checks API version from headers and routes requests to appropriate controller modules. Implements content negotiation via `Accept` headers to handle requested or default versions. Nonexistent versions default to `v1`.</li>
+              </ul>
+            </p>
+          </section>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

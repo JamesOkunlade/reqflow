@@ -5,7 +5,11 @@ import { useNavigate, Link } from 'react-router-dom';
 import { signup, login } from './authSlice';
 
 const AuthForm = ({ type }) => {
-  const [formData, setFormData] = useState({ email: '', password: '', password_confirmation: '', first_name: '', last_name: '' });
+  const initialFormData = type === 'signup'
+    ? { email: '', password: '', password_confirmation: '', first_name: '', last_name: '' }
+    : { email: '', password: '' };
+
+  const [formData, setFormData] = useState(initialFormData);
   const dispatch = useDispatch();
   const authState = useSelector((state) => state.auth);
   const navigate = useNavigate();
@@ -61,12 +65,16 @@ const AuthForm = ({ type }) => {
             </Link>
 
             <h1 className="mt-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
-              Welcome to ReqFlow 🦑
+              Welcome to ReqFlow
             </h1>
 
             <p className="mt-4 leading-relaxed text-gray-500">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam dolorum aliquam,
-              quibusdam aperiam voluptatum.
+              A simple request and approval tool.
+            </p>
+
+            <p className="mt-4 leading-relaxed text-gray-500">
+              The idea is simple, a user can make a request of an amount for anything and when three other users with a higher clearance 
+              level than the requester approve, the requested amount is released in form of a preloaded virtual card (this part has not been implemented yet). 
             </p>
 
             <form onSubmit={handleSubmit} className="mt-8 grid grid-cols-6 gap-6">
