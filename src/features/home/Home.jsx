@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div className="relative flex min-h-screen flex-col justify-center items-center overflow-hidden bg-gray-50 py-6 sm:py-12">
       <div className="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
-        <div className="mx-auto max-w-2xl"> {/* Adjust max-w-2xl instead of max-w-md */}
+        <div className="mx-auto max-w-2xl">
 
           <h2 className="text-3xl font-bold sm:text-4xl">ReqFlow: A Simple Request and Approval Tool</h2>
           <p className="mt-4 text-gray-600">
@@ -77,14 +77,14 @@ const Home = () => {
             <h3 className="text-2xl font-semibold">Technological Choices</h3>
             <h4 className="text-xl font-semibold mt-4">Authentication and Authorization</h4>
             <p className="mt-2 text-gray-600">
-              Token-based Authentication: Implemented using the jwt gem for managing JSON Web Tokens (JWT). The User model handles user storage, and the authentication system is structured with four service classes:
-              <ul className="list-disc list-inside mt-2 ml-4">
-                <li>JsonWebToken: Handles encoding and decoding JWT tokens.</li>
-                <li>AuthorizeApiRequest: Ensures API calls are authorized with valid tokens and user payloads.</li>
-                <li>AuthenticationController: Manages the authentication process.</li>
-                <li>AuthenticateUser: Performs user authentication.</li>
-              </ul>
+              Token-based Authentication: Implemented using the jwt gem for managing JSON Web Tokens (JWT). The User model handles user storage, and the authentication system is structured with four service classes.
             </p>
+            <ul className="list-disc list-inside mt-2 ml-4 text-gray-600">
+              <li>JsonWebToken: Handles encoding and decoding JWT tokens.</li>
+              <li>AuthorizeApiRequest: Ensures API calls are authorized with valid tokens and user payloads.</li>
+              <li>AuthenticationController: Manages the authentication process.</li>
+              <li>AuthenticateUser: Performs user authentication.</li>
+            </ul>
             
             <h4 className="text-xl font-semibold mt-4">JWT Singleton</h4>
             <p className="mt-2 text-gray-600">
@@ -99,10 +99,10 @@ const Home = () => {
             <h4 className="text-xl font-semibold mt-4">Versioning</h4>
             <p className="mt-2 text-gray-600">
               API Versioning: Even for internal projects, versioning APIs is crucial to manage breaking changes. Implemented by adding a route constraint based on request headers and organizing controllers into different modules.
-              <ul className="list-disc list-inside mt-2 ml-4">
-                <li>ApiVersion Class: Checks API version from headers and routes requests to appropriate controller modules. Implements content negotiation via `Accept` headers to handle requested or default versions. Nonexistent versions default to `v1`.</li>
-              </ul>
             </p>
+            <ul className="list-disc list-inside mt-2 ml-4 text-gray-600">
+              <li>ApiVersion Class: Checks API version from headers and routes requests to appropriate controller modules. Implements content negotiation via `Accept` headers to handle requested or default versions. Nonexistent versions default to `v1`.</li>
+            </ul>
           </section>
         </div>
       </div>
