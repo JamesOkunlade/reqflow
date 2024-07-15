@@ -65,12 +65,14 @@ ReqFlow is a simple request and approval tool. This React application serves as 
 
 ### Usage
 
-1. Clone the repository: `git clone https://github.com/yourusername/reqflow-frontend.git`
+1. Clone the repository: `git clone https://github.com/JamesOkunlade/reqflow-frontend.git`
 2. Install dependencies: `yarn install`
 3. Start the development server: `yarn run dev`
 4. The app will be running on `http://localhost:5173`
+5. Ensure the backend is serving on port :3000
 
-### Available Scripts
+### Loom Demo
+https://www.loom.com/share/7ece706f3ea24f519e53d007080c7588?sid=20962d24-627b-4a0b-ae10-6edc7d5e5fea
 
 
 ### Authentication and Authorization

@@ -169,10 +169,6 @@ const RequestDetail = () => {
             <p className="text-pretty text-sm text-gray-500">{request.description}</p>
           </div>
           <dl className="mt-6 flex gap-4 sm:gap-6">
-            <div className="flex flex-col-reverse">
-              <dt className="text-sm font-medium text-gray-600">Published</dt>
-              <dd className="text-xs text-gray-500">31st June, 2021</dd>
-            </div>
             {getApprovalStatusMessage(request)}
             {request.pending_approval && (
               <div>

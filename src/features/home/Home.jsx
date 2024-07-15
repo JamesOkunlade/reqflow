@@ -4,7 +4,8 @@ const Home = () => {
   return (
     <div className="relative flex min-h-screen flex-col justify-center items-center overflow-hidden bg-gray-50 py-6 sm:py-12">
       <div className="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
-        <div className="mx-auto max-w-md">
+        <div className="mx-auto max-w-2xl"> {/* Adjust max-w-2xl instead of max-w-md */}
+
           <h2 className="text-3xl font-bold sm:text-4xl">ReqFlow: A Simple Request and Approval Tool</h2>
           <p className="mt-4 text-gray-600">
             The idea is simple, a user can make a request of an amount for anything and when three other users with a higher clearance level than the requester approve, the requested amount is released in form of a preloaded virtual card (this part has not been implemented yet). The focus of this project is not on the validity of the idea but on the technical tools and choices and also an attempt to describe the barest minimum in terms of proactiveness, requirements definition, ownership, autonomy, and good soft communication skills which are all necessary for the role of a product-minded senior engineer.
