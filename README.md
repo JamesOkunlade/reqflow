@@ -4,6 +4,12 @@
 
 ReqFlow is a simple request and approval tool. This React application serves as the frontend for the ReqFlow system, allowing users to interact with the request and approval processes. The focus is on demonstrating the technical tools and choices used to create a user-friendly and efficient interface.
 
+
+#### This is a work in progress and requires improvement in a few places. 
+
+#### One obvious area of concern that will be improved is the use of global state. This approach can lead to re-fetching requests unnecessarily, which may impact performance.
+
+
 ### Features
 
 - **User Authentication**: Users can log in and manage their sessions.
